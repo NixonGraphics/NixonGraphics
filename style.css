@@ -1,0 +1,282 @@
+
+ :root{
+     --orange:#ff6200;   
+     --black: #272727;
+     --pink: #e8175d;
+     --first-color : #002c3e;
+     --second-color : #F7444E;
+     --third-color : #FF6F3D;
+     --forth-color : #38D7E7;
+     --fifth-color : #EE316B;
+     --sixth-color : #2B92E4;
+     --seventh-color : #222;    
+    }
+ 
+    *{
+        font-family: sans-serif;
+    }
+ 
+  .colorPicker{
+      left: 90%;
+      top: 3%;
+      padding: 5px;
+      position: absolute;
+      display: none;
+  }  
+ 
+ body{
+     margin: 0;
+     padding: 0;
+     background-color: var(--seventh-color);
+ }
+ 
+ nav{
+ background-color: var(--pink);
+ width: 250px;
+ height: 100%;
+ position: fixed;
+ left:-270px; 
+ transition: 0.5s ease;
+ overflow: hidden;
+ z-index: 100;
+ top:0;
+ }
+ 
+ nav ul{
+     float: left;
+     margin-top: 60px;
+     width: 100%;
+     position: absolute;
+     left: -20px;
+ }
+ 
+ ul li:hover{
+     transform: translateX(10px);
+ }
+ 
+ 
+ ul li{
+     list-style: none;
+     margin-top: 40px;
+     height: 50px;
+     transition: 0.2s ease; 
+ }
+ 
+ ul li::before{
+ content: 'A';
+ width: 1px;
+ height: 100px;
+ color: var(--first-color);
+ position: relative;
+ background-color: var(--first-color);
+ margin-left: -35px;
+ margin-right: 20px;
+ margin-top: 300px;
+ border-radius: 3px;
+ }
+ 
+ ul li a{
+     color: white;
+     text-decoration: none;
+     font-size: 27px;
+     transition: 0.3s ease;
+     width: 100%;
+     height: 100%;
+     font-weight: 1000px;
+     font-family: sans-serif;
+ }
+ 
+ ul li a:hover{
+     color: var(--black);
+ }
+ 
+   /* hamburger button */
+ 
+   .hamCont{
+     position: absolute;
+     left:30px;
+     top:20px;
+     cursor: pointer;
+     display: block;
+     transition: 0.6s ease;
+     z-index: 122;
+   }
+ 
+   
+   .hamCont .ham1, .ham2, .ham3{
+     background-color: white;
+     margin-top: 5px;
+     position: relative;
+     transition: 0.3s ease;
+     background-size: 30px;
+   }
+ 
+   .hamCont .ham1{
+       width: 40px;
+       height: 5px;
+   }
+ 
+ 
+   .hamCont .ham2{
+     width: 30px;
+     height: 5px;
+ }
+ 
+ .hamCont .ham3{
+     width: 20px;
+     height: 5px;
+ }
+ 
+ 
+ 
+ 
+   /* js hamburger starts */
+ 
+  .ham1.active{
+      transform: rotate(45deg) translateX(7px) translateY(7px);
+      background-color: var(--black);
+  } 
+ 
+   .ham2.active{
+       opacity: 0;
+       transform: translateX(12px);
+       background-color: var(--black);
+       width: 40px;
+   }
+   
+ 
+  .ham3.active{
+     transform: rotate(-45deg)  translateX(8px) translateY(-7px);
+     background-color: var(--black);
+     width: 40px;
+ } 
+ 
+ .hamCont.active{
+     transform: translateX(150px) rotate(90deg);
+ }
+ 
+ .hamCont.active:hover .ham1{
+     background-color: white;
+ }
+ 
+ .hamCont.active:hover .ham3{
+     background-color: white;
+ }
+ 
+ .hamCont.active:hover{
+     filter: drop-shadow( 0 1px 15px white);
+     /* box-shadow: 0 1px 15px black; */
+     background-color: transparent;
+ }
+ 
+ .nav.active{
+ left:0;
+ }
+ 
+  /* another project */
+ 
+ .numberContainer{
+     top:60%;
+     position: absolute;
+     left:20%;
+     align-content: center;
+     padding: 15px;
+ }
+ 
+ .numberContainer h1{
+     color: white;
+     text-align: center;
+     font-size: 60px;
+ }
+ 
+ .numberContainer button{
+     background-color: transparent;
+     border: 2px solid var(--orange);
+     border-radius: 20px;
+     color: white;
+     margin-left: 10px;
+     padding: 3px;
+     width: 90px;
+     font-size: 17px;
+     cursor: pointer;
+     transition: 0.3s ease;
+ }
+ 
+ .numberContainer button:hover{
+     font-size: 18px;
+ }
+ 
+ 
+ 
+ 
+ /* to do list */
+ .todocont {
+     position: relative;
+     left:30%;
+     margin-top:20%;
+     border-radius: 10px;
+     background: #7F00FF;  /* fallback for old browsers */
+     background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
+     background: linear-gradient(to right, #E100FF, #7F00FF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+     width: 300px;
+     height: 220px;
+     overflow: scroll; 
+ }
+ 
+ .todocont h1{
+     color: white;
+     text-align: center;
+     margin-top: 20px;
+ }
+ 
+ .todocont .inputfield{
+ outline: none;
+ padding: 0 50px 10px 10px;
+ width: 130px;
+ height: 18px;
+ margin-left: 10px;
+ border-radius: 3px;
+ border: 1px solid white;
+ bottom: 100px;
+ background-image: linear-gradient(to right, var(--second-color) 0%, var(--third-color)  51%, var(--second-color)  100%)
+ }
+ 
+ .todocont .addbtn{
+     margin-left: 10px;
+     position: absolute;
+     top:77px;
+     cursor: pointer;
+     padding: 6px 13px;
+     text-align: center;
+     text-transform: uppercase;
+     font-weight: 600px;
+     letter-spacing: 1px;
+     background-size: 100% auto;
+     color: white;            
+     box-shadow: 0 0 20px #eee;
+     border-radius: 4px;
+     border: 2px solid white;
+     background-image: linear-gradient(to right, #FF512F 0%, #F09819  51%, #FF512F  100%)
+ }
+ 
+ 
+ .addbtn:hover {
+     background-position: right center; 
+     color: #fff;
+     text-decoration: none;
+   }
+  
+ 
+ .todocont p{
+     color: white;
+     background-color: var(--orange);
+     width: 70%;
+     height: 30px;    
+     padding: 0 15px;
+     line-height: 30px;
+     border-radius: 2px;
+     font-size: 18px;
+     margin-left: 9px;
+     position: relative;
+     cursor: pointer;
+ }
