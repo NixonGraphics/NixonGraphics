@@ -213,7 +213,7 @@
  .todocont {
      position: relative;
      left:30%;
-     margin-top:20%;
+     margin-top:10%;
      border-radius: 10px;
      background: #7F00FF;  /* fallback for old browsers */
      background: -webkit-linear-gradient(to right, #E100FF, #7F00FF);  /* Chrome 10-25, Safari 5.1-6 */
